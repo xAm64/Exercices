@@ -51,7 +51,6 @@ namespace ConsoleApp4
                     Console.WriteLine("\n Nouvelle recherche ?");
 
                     restart = Console.ReadKey().Key == ConsoleKey.O;
-
                 }
 
             }
