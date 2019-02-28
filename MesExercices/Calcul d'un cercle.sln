@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul d'un cercle", "Calcul d'un cercle\Calcul d'un cercle.csproj", "{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COnversion ºC ºF", "ConsoleApp1\COnversion ºC ºF.csproj", "{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul inclinaison solaire", "Calcul inclinaison solaire\Calcul inclinaison solaire.csproj", "{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul moyenne", "ConsoleApp2\Calcul moyenne.csproj", "{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul aire cercle", "Calcul aire cercle\Calcul aire cercle.csproj", "{32B4CE19-3FE4-4FF0-936E-7326A2675E1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inversion nombre a et b", "inversion nombre a et b\inversion nombre a et b.csproj", "{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "for", "for\for.csproj", "{28D441C5-391F-4D7A-B0E3-2A689102F4B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32B4CE19-3FE4-4FF0-936E-7326A2675E1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32B4CE19-3FE4-4FF0-936E-7326A2675E1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32B4CE19-3FE4-4FF0-936E-7326A2675E1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32B4CE19-3FE4-4FF0-936E-7326A2675E1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E4DD244C-0830-471E-BB68-97C02C954E5D}
+	EndGlobalSection
+EndGlobal
