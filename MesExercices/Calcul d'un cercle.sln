@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inversion nombre a et b", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "for", "for\for.csproj", "{28D441C5-391F-4D7A-B0E3-2A689102F4B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice avion", "Exercice avion\Exercice avion.csproj", "{DD83A5FA-B792-432A-8E9D-F317F385A31A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
