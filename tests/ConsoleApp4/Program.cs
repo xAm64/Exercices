@@ -37,13 +37,13 @@ namespace ConsoleApp4
                 }
                 else
                 {
-                    Console.WriteLine("{0}Vous recherchez la ville de: {1}", Environment.NewLine, cities);
+                    Console.WriteLine("{0}Vous recherchez la ville de: {1}", Environment.NewLine, search);
 
                     foreach (string value in cities)
                     {
                         if(value.ToLower() == search.ToLower())
                         {
-                            Console.WriteLine("La ville de: {0} existe", cities);
+                            Console.WriteLine("La ville de: {0} existe", search);
                             Console.WriteLine("Elle se situe à la position: {0}", Array.IndexOf(cities, search));
                             break;
                         }
