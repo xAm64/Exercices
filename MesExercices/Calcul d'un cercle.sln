@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "for", "for\for.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice avion", "Exercice avion\Exercice avion.csproj", "{DD83A5FA-B792-432A-8E9D-F317F385A31A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tableau conversion C-F", "Tableau conversion C-F\Tableau conversion C-F.csproj", "{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
