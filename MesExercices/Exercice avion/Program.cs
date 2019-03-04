@@ -10,7 +10,7 @@ namespace Exercice_avion
     {
         static void Main(string[] args)
         {
-            
+
             string[] Tableau1 = new string[]//Avion
             {
                 "Boing747",
@@ -51,11 +51,13 @@ namespace Exercice_avion
             bool restart;
             restart = false;
             string codeAvion;
+            
 
             do
             {
                 Console.WriteLine("Entrez le code de l'avion");
                 codeAvion = Console.ReadLine().Trim();
+
                 if (string.IsNullOrEmpty(codeAvion))
                 {
                     Console.WriteLine("Vous n'avez rien écrit !¡!");
@@ -64,31 +66,38 @@ namespace Exercice_avion
                 else
                 {
                     Console.WriteLine("Vous avez écrit {0} ", codeAvion);
-
-                    foreach(string value in Tableau2)
+                    int index =0;
+                    while ((index < Tableau2.Length)&&( codeAvion != Tableau2[index]))
                     {
-                        if (value.ToLower() == codeAvion.ToLower())
-                        {
-                            Console.WriteLine("Avion {0} Vitesse X Rayon Y", Array.IndexOf(Tableau2, codeAvion));
-                        }
-
-
-                        
-
+                        index++;
                     }
-                    if()//si résultat = null
+
+                    if(index < Tableau2.Length)
                     {
-                        Console.WriteLine("Cet avion n'existe pas");
+                        Console.WriteLine("Avion {0} Vitesse {1} Rayon {2}", Tableau1[index], Tableau3[index], Tableau4[index]);
+                        Console.WriteLine("Voulez-vous faire une autre recherche ?");
+                        restart = Console.ReadKey().Key == ConsoleKey.O;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Cet avion n'existe pas !");
                         restart = true;
                     }
+                    
+
 
                 }
+
 
             }
             while (restart);
 
-
+            Console.WriteLine("{0}Au revoir", Environment.NewLine);
             Console.ReadLine();
         }
+
+
+
+            
     }
 }
