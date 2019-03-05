@@ -28,12 +28,14 @@ namespace Tableau_conversion_C_F
                 {
                     do
                     {
-                        Console.WriteLine("À quel temperature dois il commencer ?");
+                        Console.WriteLine("Temperature de départ ?");
                         temp = Console.ReadLine();
                         ok = double.TryParse(temp, out Tmin);
                         if (!ok)
                         {
-                            Console.WriteLine("Écrivez des chiffres, l'ordinateur n'est pas madame soleil !");
+                            Console.WriteLine("Écrivez la valeur en chiffres! ceci est un ordinateur, pas une voyante !");
+                            Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
+                            Console.ReadLine();
                         }
                     }
                     while (!ok);
@@ -44,27 +46,39 @@ namespace Tableau_conversion_C_F
                         ok = double.TryParse(temp, out Tmax);
                         if (!ok)
                         {
-                            Console.WriteLine("Écrivez une valeur en chiffre, l'ordinateur n'est pas madame soleil !");
+                            Console.WriteLine("Écrivez la vcaleur en chiffre, l'ordinateur n'est pas madame soleil !");
+                            Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
+                            Console.ReadLine();
                         }
                     }
                     while (!ok);
                     if (Tmin > Tmax)
                     {
-                        Console.WriteLine("Une fausse manip a été détecter, la valeur minimale doit être INFÉRIEURE à la valeur maximale !");
+                        Console.WriteLine("Une inversion a été détecter entre la temperature minimale et maximale !");
+                        Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
+                        Console.ReadLine();
+
                         restart = true;
                     }
                     else
                     {
-                        Console.WriteLine("De combien on monte à chaque lignes ?");
-                        temp = Console.ReadLine();
-                        ok = double.TryParse(temp, out Progres);
-                        if (!ok)
+                        do
                         {
-                            Console.WriteLine("La valeur doit être en chiffres");
+                            Console.WriteLine("De combien on monte à chaque lignes ?");
+                            temp = Console.ReadLine();
+                            ok = double.TryParse(temp, out Progres);
+                            if (!ok)
+                            {
+                                Console.WriteLine("À ce jour l'ordinateur n'a pas le don de lire dans vos pensées, mais il sait bien calculer si on lui donne des chiffres !");
+                                Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
+                                Console.ReadLine();
+                            }
                         }
+                        while (!ok);
+                        
                         if (unit == "C")
                         {
-                            Console.WriteLine("Appuyer sur une touche pour commencer le calcul");
+                            Console.WriteLine("Appuyer sur entrée (le coussin entrée est accépter) pour commencer le calcul");
                             double i;
                             Console.ReadLine();
                             for (i = Tmin; i <= Tmax; i +=Progres)
@@ -72,7 +86,7 @@ namespace Tableau_conversion_C_F
                                 tempCal = (i * 9 / 5) + 32;
                                 Console.WriteLine("{0}°{1} = {2}°F", i, unit, tempCal);
                             }
-                            Console.WriteLine("Un nouveau calcul ?");
+                            Console.WriteLine("Si vous souhaiter faire un nouveau calcul appuyer sur la touche O");
                             restart = Console.ReadKey().Key == ConsoleKey.O;
                         }
                         else
@@ -85,7 +99,7 @@ namespace Tableau_conversion_C_F
                                 tempCal = (i - 32) * 5 / 9;
                                 Console.WriteLine("{0}°{1} = {2}°C", i, unit, tempCal);
                             }
-                            Console.WriteLine("Un nouveau calcul ?");
+                            Console.WriteLine("Si vous souhaiter faire un nouveau calcul appuyer sur la touche O");
                             restart = Console.ReadKey().Key == ConsoleKey.O;
                         }
                     }
@@ -94,6 +108,10 @@ namespace Tableau_conversion_C_F
                 {
 
                     Console.WriteLine("À ce jour l'ordinateur na pas le pouvoir de lire dans vos pensées !");
+                    Console.WriteLine("Écrivez les unités de temperature en °C (touche C) ou °F (touche F)");
+                    Console.WriteLine("Appuyer sur entrée pour recommencer");
+                    Console.ReadLine();
+
                     restart = true;
                 }
 
