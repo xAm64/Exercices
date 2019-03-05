@@ -41,12 +41,12 @@ namespace Tableau_conversion_C_F
                     while (!ok);
                     do
                     {
-                        Console.WriteLine("À quel temperature je dois il arrêter ?");
+                        Console.WriteLine("À quel temperature doit il arrêter ?");
                         temp = Console.ReadLine();
                         ok = double.TryParse(temp, out Tmax);
                         if (!ok)
                         {
-                            Console.WriteLine("Écrivez la vcaleur en chiffre, l'ordinateur n'est pas madame soleil !");
+                            Console.WriteLine("Écrivez la valeur en chiffre, l'ordinateur n'est pas madame soleil !");
                             Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
                             Console.ReadLine();
                         }
