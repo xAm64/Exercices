@@ -143,7 +143,7 @@ namespace Gestion_livraison
                             pass = int.TryParse(moisLiv, out monthLiv);//ok
 
                         }
-                        if (!pass || monthLiv > days.Length || monthLiv == 0 || monthLiv == numMois)
+                        if (!pass || monthLiv > month.Length || monthLiv == 0 || monthLiv == numMois)
                         {
                             if (!pass || monthLiv > month.Length)
                             {
