@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice avion", "Exercice 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tableau conversion C-F", "Tableau conversion C-F\Tableau conversion C-F.csproj", "{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "compteur-caracteres", "compteur-caracteres\compteur-caracteres.csproj", "{16F3F871-93DF-4ECF-B452-5FF8C41D944D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion livraison", "Gestion livraison\Gestion livraison.csproj", "{C6B8CB2E-8D9E-4469-A557-067C01127BA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16F3F871-93DF-4ECF-B452-5FF8C41D944D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16F3F871-93DF-4ECF-B452-5FF8C41D944D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16F3F871-93DF-4ECF-B452-5FF8C41D944D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16F3F871-93DF-4ECF-B452-5FF8C41D944D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B8CB2E-8D9E-4469-A557-067C01127BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B8CB2E-8D9E-4469-A557-067C01127BA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B8CB2E-8D9E-4469-A557-067C01127BA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B8CB2E-8D9E-4469-A557-067C01127BA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
