@@ -48,34 +48,130 @@ namespace Gestion_livraison
                 {
                     index++;
                 }
-                if(index < num_client.Length)//condition trouvé
+                if (index < num_client.Length)//condition trouvé
                 {
 
                     Console.WriteLine("Le numéro corespondant a été trouvé");
                     int numJour = jour[index];
                     int numMois = mois[index];
-                    string txtJour;
-                    string txtMois;
-                    if(numMois == 0)
+                    string diaz;
+                    string mes;
+                    if (numMois == 0)
                     {
-                        txtMois = "livraison possible toute l'année";
+                        mes = "livraison possible toute l'année";
                     }
                     else
                     {
-                        txtMois = "Pas de livraison possible au mois de: " +month[numMois];
+                        mes = "Pas de livraison possible au mois de: " + month[numMois];
                     }
-                    if(numJour == 0)
+                    if (numJour == 0)
                     {
-                        txtJour = "livraison possible toute la semaine sauf le dimanche";
+                        diaz = "livraison possible toute la semaine sauf le dimanche";
                     }
                     else
                     {
-                        txtJour = "Pas de livraison le: " + days[numJour] +"ni le dimanche";
+                        diaz = "Pas de livraison le: " + days[numJour] + " ni le dimanche";
                     }
-                    Console.WriteLine("Numero {0} Nom : {1}. {2}. {3}.", saisie, noms[index], txtJour, txtMois);
+                    Console.WriteLine("Numero {0} Nom : {1}. {2}. {3}.", saisie, noms[index], diaz, mes);//Recherche le nom et affiche les règles à ce point.
 
+                    bool pass;
+                    int dayLiv;
+                    int monthLiv;
+                    do //calcul du jour de livraison si possible ou pas.
+                    {
+                        pass = true;
+                        dayLiv = 0;
+                        Console.WriteLine("Quel jour de livraison souhaitez vous ?");
+                        string jourLiv = Console.ReadLine().Trim();
+                        if (days.Contains(jourLiv))//doit rechercher les jours, si pas trouvé passer en chiffres
+                        {
+                            while ((dayLiv <= days.Length) && (jourLiv != days[dayLiv]))
+                            {
+                                dayLiv++;
+                            }
+                        }
+                        else
+                        {
+                            pass = int.TryParse(jourLiv, out dayLiv);//ok
+
+                        }
+                        if (!pass || dayLiv > days.Length || dayLiv == 0 || dayLiv == numJour)
+                        {
+                            if (!pass || dayLiv > days.Length)
+                            {
+                                Console.WriteLine("Il y a une erreur dans la saisie du jour, merci d'écrire le jour de la semaine ou le chiffre corespondant (1 à 6)");
+                                Console.WriteLine("Appuyer sur une touche pour recommencer");
+                                Console.ReadLine();
+                            }
+                            if (dayLiv == 0)
+                            {
+                                Console.WriteLine("La livraison n'est pas possible le dimanche");
+                                pass = false;
+                                Console.WriteLine("Appuyer sur entrée pour recommencer");
+                                Console.ReadLine();
+                            }
+                            if (dayLiv == numJour)
+                            {
+                                Console.WriteLine(diaz);
+                                pass = false;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("La livraison est possible");
+                        }
+
+
+                    }
+                    while (!pass);
+
+                    do //calcul du mois de livraison si possible ou pas.
+                    {
+                        pass = true;
+                        monthLiv = 0;
+                        Console.WriteLine("Quel mois pour la livraison ?");
+                        string moisLiv = Console.ReadLine().Trim();
+                        if (month.Contains(moisLiv))//doit rechercher les jours, si pas trouvé passer en chiffres
+                        {
+                            while ((monthLiv <= month.Length) && (moisLiv != month[monthLiv]))
+                            {
+                                monthLiv++;
+                            }
+                        }
+                        else
+                        {
+                            pass = int.TryParse(moisLiv, out monthLiv);//ok
+
+                        }
+                        if (!pass || monthLiv > days.Length || monthLiv == 0 || monthLiv == numMois)
+                        {
+                            if (!pass || monthLiv > month.Length)
+                            {
+                                Console.WriteLine("Il y a une erreur dans la saisie, merci d'écrire le mois ou de mettre un chiffre corespondant entre 1 et 12");
+                                Console.WriteLine("Appuyer sur une touche pour recommencer");
+                                Console.ReadLine();
+                            }
+                            if (monthLiv == 0)
+                            {
+                                Console.WriteLine("La livraison n'est pas possible toute l'année");
+                                pass = false;
+                                Console.WriteLine("Appuyer sur entrée pour recommencer");
+                                Console.ReadLine();
+                            }
+                            if (monthLiv == numMois)
+                            {
+                                Console.WriteLine(mes);
+                                pass = false;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("La livraison est possible");
+                        }
+                    }
+                    while (!pass);
                 }
-                else//non trouvé
+                else// client non trouvé
                 {
                     Console.WriteLine("Ce client n'existe pas !");
                     Console.ReadLine();
