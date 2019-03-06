@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul d'un cercle", "Calcul d'un cercle\Calcul d'un cercle.csproj", "{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COnversion ºC ºF", "ConsoleApp1\COnversion ºC ºF.csproj", "{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COnversion ºC ºF simple", "ConsoleApp1\COnversion ºC ºF simple.csproj", "{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul inclinaison solaire", "Calcul inclinaison solaire\Calcul inclinaison solaire.csproj", "{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}"
 EndProject
