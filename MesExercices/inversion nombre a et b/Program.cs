@@ -8,24 +8,30 @@ namespace inversion_nombre_a_et_b
 {
     class Program
     {
-        static int X;
+        public static void inverseur (ref int a, ref int b)
+        {
+            int x = a;
+            a = b;
+            b = x;
+        }
 
         static void Main(string[] args)
         {
+
+
+
             Console.WriteLine("Donne moi 2 nombres que je vais retenir et ensuite inverser");
             Console.WriteLine("Commence par me donner le nombre A");
             string bteA = Console.ReadLine();
             Console.WriteLine("Maintenant le nombre B");
             string bteB = Console.ReadLine();
-            int A = int.Parse(bteA);
-            int B = int.Parse(bteB);
-            Console.WriteLine("Pour le moment j'ai le nombre: " + A + " dans A et le nombre: " + B + " dans B");
+            int a = int.Parse(bteA);
+            int b = int.Parse(bteB);
+            Console.WriteLine("Pour le moment j'ai le nombre: " + a + " dans A et le nombre: " + b + " dans B");
             Console.WriteLine("Je vais inverser les chiffres");
-            X = A;
-            A = B;
-            B = X;
+            inverseur(ref a, ref b);
             Console.ReadLine();
-            Console.WriteLine("Voila maintenant j'ai: " + A + " dans A et " + B + " dans B");
+            Console.WriteLine("Voila maintenant j'ai: " + a + " dans A et " + b + " dans B");
 
             Console.ReadLine();
         }
