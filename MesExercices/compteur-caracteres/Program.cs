@@ -11,25 +11,26 @@ namespace ConsoleApp5
 
         static void Main(string[] args)
         {
-            bool restart = false;
+            bool restart;
             do
             {
+                restart = false;
                 Console.WriteLine("Écrire un mot ou une phrase (Maximun 255 caractères)");
                 string saisie;
                 string voyelles = "aeiouyAEIOUY";
                 string consones = "bcdfghjklmnpqrstvwxzBCDFGHJKLMNPQRSTVWXZ";
                 string space = " ";
                 string acents = "àáâèéêìíîòóôùúûýÀÁÂÈÉÊÌÍÎÒÓÔÙÚÛÝ";
+                string chiffres = "0123456789";
                 int compCar = 0;
                 int voyCar = 0;
                 int conCar = 0;
                 int spaceC = 0;
                 int carAct = 0;
                 int speCar = 0;
-
+                int nbrs = 0;
 
                 saisie = Console.ReadLine();
-
 
                 for (int i = 0; i < saisie.Length; i++)//boucle for
                 {
@@ -51,8 +52,13 @@ namespace ConsoleApp5
                     {
                         carAct++;
                     }
-                    speCar = compCar - voyCar - conCar - spaceC - carAct;
+                    if (chiffres.Contains(c))
+                    {
+                        nbrs++;
+                    }
+                    
                 }
+                speCar = compCar - voyCar - conCar - spaceC - carAct - nbrs;
                 spaceC++;
                 if (compCar <= 1)//nombre de caractères
                 {
@@ -96,6 +102,14 @@ namespace ConsoleApp5
                 {
                     Console.WriteLine("{0} caractères accentués", carAct);
                 }
+                if (nbrs <= 1)
+                {
+                    Console.WriteLine("{0} chiffre", nbrs);
+                }
+                else
+                {
+                    Console.WriteLine("{0} chiffres", nbrs);
+                }
                 if (speCar <= 1)
                 {
                     Console.WriteLine("{0} caractère spécial", speCar);
@@ -110,9 +124,6 @@ namespace ConsoleApp5
 
             }
             while (restart);
-
-
-
 
             Console.ReadLine();
         }
