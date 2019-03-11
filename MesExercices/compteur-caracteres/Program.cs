@@ -22,6 +22,7 @@ namespace ConsoleApp5
                 string space = " ";
                 string acents = "àáâèéêìíîòóôùúûýÀÁÂÈÉÊÌÍÎÒÓÔÙÚÛÝ";
                 string chiffres = "0123456789";
+                string tirets = "-";
                 int compCar = 0;
                 int voyCar = 0;
                 int conCar = 0;
@@ -29,6 +30,7 @@ namespace ConsoleApp5
                 int carAct = 0;
                 int speCar = 0;
                 int nbrs = 0;
+                int motComp = 0;
 
                 saisie = Console.ReadLine();
 
@@ -56,9 +58,13 @@ namespace ConsoleApp5
                     {
                         nbrs++;
                     }
+                    if (tirets.Contains(c))
+                    {
+                        motComp++;
+                    }
                     
                 }
-                speCar = compCar - voyCar - conCar - spaceC - carAct - nbrs;
+                speCar = compCar - voyCar - conCar - spaceC - carAct - nbrs - motComp;
                 spaceC++;
                 if (compCar <= 1)//nombre de caractères
                 {
@@ -101,6 +107,14 @@ namespace ConsoleApp5
                 else
                 {
                     Console.WriteLine("{0} caractères accentués", carAct);
+                }
+                if (motComp <= 1)
+                {
+                    Console.WriteLine("{0} mot composé", motComp);
+                }
+                else
+                {
+                    Console.WriteLine("{0} mots composés", motComp);
                 }
                 if (nbrs <= 1)
                 {
