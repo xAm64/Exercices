@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul Moyenne 2nbrs", "Cal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Année bissextile", "Année bissextile\Année bissextile.csproj", "{7A112CFB-AB62-4F9C-BF7C-0952D73383F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calcul jour", "calcul jour\calcul jour.csproj", "{5C80D43C-5039-4B75-B422-CD06B7D246DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +95,10 @@ Global
 		{7A112CFB-AB62-4F9C-BF7C-0952D73383F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A112CFB-AB62-4F9C-BF7C-0952D73383F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A112CFB-AB62-4F9C-BF7C-0952D73383F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C80D43C-5039-4B75-B422-CD06B7D246DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C80D43C-5039-4B75-B422-CD06B7D246DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C80D43C-5039-4B75-B422-CD06B7D246DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C80D43C-5039-4B75-B422-CD06B7D246DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
