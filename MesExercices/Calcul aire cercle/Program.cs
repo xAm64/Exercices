@@ -8,12 +8,18 @@ namespace Calcul_aire_cercle
 {
     class Program
     {
-        static double aire;
-        static double Ray;
-        static double an;
+
+        static double CalculAire (double _ray, double _an)
+        {
+            double aire = Math.PI * (_ray * _ray) * _an / 360;
+            return aire;
+        }
 
         static void Main(string[] args)
         {
+            double aire;
+            double Ray;
+            double an;
             ConsoleKeyInfo recommencer;
             bool ok;
             do
@@ -47,7 +53,7 @@ namespace Calcul_aire_cercle
                 while (!ok);
 
                 Console.WriteLine("Un instant je calcule tout ça...");
-                double aire = Math.PI * (Ray * Ray) * an / 360;
+                aire = CalculAire(Ray, an);
                 Console.WriteLine("L'aire du secteur du cercle est de: {0}{1}²", aire, unit);
                 Console.WriteLine("Voulez vous faire un autre calcul ?");
                 recommencer = Console.ReadKey();
