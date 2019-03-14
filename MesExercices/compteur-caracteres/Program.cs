@@ -140,7 +140,7 @@ namespace ConsoleApp5
 
             }
             while (restart);
-
+            Console.WriteLine("Au revoir");
             Console.ReadLine();
         }
     }
