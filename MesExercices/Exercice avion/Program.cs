@@ -48,8 +48,7 @@ namespace Exercice_avion
                 2500,
             };
 
-            bool restart;
-            restart = false;
+            bool restart = false;
             string codeAvion;
             
 
