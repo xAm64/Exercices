@@ -13,19 +13,19 @@ namespace ConsoleApp1
         {
             int i;
             int compt = 0;
-            for(i=jour; i > 0; i--)
+            for(i=jour; i > 0; i--)//conversion jour en secondes
             {
                 compt += 86400;
             }
-            for(i = hr; i > 0; i--)
+            for(i = hr; i > 0; i--)//conversion heures en secondes
             {
                 compt += 3600;
             }
-            for(i = min; i > 0; i--)
+            for(i = min; i > 0; i--)//conversion minutes en secondes
             {
                 compt += 60;
             }
-            compt += sec;
+            compt += sec;//ajout des secondes restantes
             return compt;
         }
         #endregion
@@ -33,17 +33,17 @@ namespace ConsoleApp1
         static void CalculEnHrs (int value, ref int jour, ref int hrs, ref int min, ref int sec)
         {
             int i;
-            for (i = value; i >= 86400; i -= 86400)
+            for (i = value; i >= 86400; i -= 86400)//Conversion secondes en jours
             {
                 jour++;
             }
             value = i;
-            for (i=value; i>= 3600; i-=3600)
+            for (i=value; i>= 3600; i-=3600)//Conversion secondes en heures
             {
                 hrs++;
             }
             value = i;
-            for (i=value; i>=60; i-=60)
+            for (i=value; i>=60; i-=60)//conversion secondes en minutes
             {
                 min++;
             }
@@ -55,16 +55,16 @@ namespace ConsoleApp1
             bool ok;
             Console.WriteLine("Je vais faire un calcul horraire");
             ConsoleKeyInfo recommencer;
-            do
+            do//boucle du temps si l'utilisateur veut faire plusieurs calculs
             {
-                int day = 0;
+                int day = 0;//on met les compteur à 0 (dans le cas de plusieurs calculs)
                 int hors = 0;
                 int minutes = 0;
                 int secondes = 0;
-                string saisie;
+                string saisie;//saisie utilisateur à Parse
                 #region Première valeur jour
                 Console.WriteLine("Il y a il un ou des jour(s) dans le calcul ?");
-                if (Console.ReadKey().Key == ConsoleKey.O)
+                if (Console.ReadKey().Key == ConsoleKey.O)//Calcul des jours de bases si il y a, l'utilisateur le dit.
                 {
                     do
                     {
@@ -138,8 +138,8 @@ namespace ConsoleApp1
                 while (!ok);
                 #endregion
                 #region Formule de calcul
-                int temps = ConvSec(day, hors, minutes, secondes);
-                day = 0;
+                int temps = ConvSec(day, hors, minutes, secondes);//Appel à la conversion en secondes
+                day = 0;//remise des compteur à 0 pour le 2ème calcul
                 hors = 0;
                 minutes = 0;
                 secondes = 0;
@@ -218,22 +218,22 @@ namespace ConsoleApp1
                 while (!ok);
                 #endregion
                 #region calcul
-                int temps2 = ConvSec(day, hors, minutes, secondes);
+                int temps2 = ConvSec(day, hors, minutes, secondes);//Appel à la conversion en secondes de la 2ème partie de l'opération
                 int total = 0;
                 do
                 {
                     ok = true;
-                    Console.WriteLine("On fait une Addition (touche +) ou une soustraction (touche -) de ces 2 valeurs ?");
+                    Console.WriteLine("On fait une Addition (touche +) ou une soustraction (touche -) de ces 2 valeurs ?");//demande l'opération du temps
                     string operation = Console.ReadLine();
-                    if (operation == "+" || operation == "-")
+                    if (operation == "+" || operation == "-")//L'utilisateur a choisis la bonne formule
                     {
-                        if (operation == "-")
+                        if (operation == "-")//Calcul si soustraction
                         {
-                            if (temps >= temps2)
+                            if (temps >= temps2)//Vérifie si la soustraction est possible
                             {
                                 total = temps - temps2;
                             }
-                            else
+                            else //L'utilisateur c'est trompé de sens on inverse.
                             {
                                 Console.WriteLine("Je vois que vous vous êtes tromper dans le sens de la soustraction je corrige cela");
                                 total = temps2 - temps;
@@ -244,7 +244,7 @@ namespace ConsoleApp1
                             total = temps + temps2;
                         }
                     }
-                    else
+                    else//L'utilisateur c'est trompé ou a écris n'importe quoi
                     {
                         Console.WriteLine("Indique moi le symbole de l'opération à réaliser (+ ou -), je ne suis pas madame soleil !");
                         ok = false;
@@ -254,19 +254,19 @@ namespace ConsoleApp1
 
                 Console.WriteLine("Je vais maintenant calculer tout ça!");
                 
-                day = 0;
+                day = 0;//On remet à 0 pour afficher le total des 2
                 hors = 0;
                 minutes = 0;
                 secondes = 0;
-                CalculEnHrs(total, ref day, ref hors, ref minutes, ref secondes);
+                CalculEnHrs(total, ref day, ref hors, ref minutes, ref secondes);//On appelle la Procédure.
                 #endregion
                 #region résultats
-                Console.WriteLine("Le résultat total est de :");
-                string diaz;
-                string hoja;
-                string minutos;
-                string segundas;
-                if (day > 1)
+                //Variables écrites en español (sans accent) pour éviter les doublons
+                string diaz;//Jour(s)
+                string hoja;//Heure(s)
+                string minutos;//Minute(s)
+                string segundas;//Seconde(s)
+                if (day > 1)//si il y a plus de 1 jour jour prend un "S"
                 {
                     diaz = "jours";
                 }
@@ -274,7 +274,7 @@ namespace ConsoleApp1
                 {
                     diaz = "Jour";
                 }
-                if (hors > 1)
+                if (hors > 1)//Si il y a plus de 1 heure Heure prend un "s"
                 {
                     hoja = "heures";
                 }
@@ -283,7 +283,7 @@ namespace ConsoleApp1
                     hoja = "heure";
                 }
 
-                if (minutes > 1)
+                if (minutes > 1)// si il y a plus que 1 minute Minute prend un "s"
                 {
                     minutos = "minutes";
                 }
@@ -291,7 +291,7 @@ namespace ConsoleApp1
                 {
                     minutos = "minute";
                 }
-                if (secondes > 1)
+                if (secondes > 1)//Si il y a plus que 1 seconde seconde prend un "s"
                 {
                     segundas = "secondes";
                 }
@@ -299,12 +299,13 @@ namespace ConsoleApp1
                 {
                     segundas = "seconde";
                 }
-                Console.WriteLine("Le résuktat est de {0} {1}, {2} {3}, {4} {5} et {6} {7}.", day, diaz, hors, hoja, minutes, minutos, secondes, segundas);
+                //Affichage : 0 Numéro jour. 1 Écriture du jour. 2 Numéro heure. 3 Écriture heure. 4Numéro minute. 5 Écriture minute. 6 Numéro secondes. 7 Écriture secondes.
+                Console.WriteLine("Le résultat est de {0} {1}, {2} {3}, {4} {5} et {6} {7}.", day, diaz, hors, hoja, minutes, minutos, secondes, segundas);//résultat sur une seul ligne avec la bonne orthographe (singulier et pluriels respecter)
                 #endregion
                 Console.WriteLine("Voulez-vous faire un nouveau calcul ?");
                 recommencer = Console.ReadKey();
             }
-            while (recommencer.Key == ConsoleKey.Y || recommencer.Key == ConsoleKey.O);
+            while (recommencer.Key == ConsoleKey.Y || recommencer.Key == ConsoleKey.O);//Revenir à la boucle du temps
             Console.WriteLine("\nAu revoir");
             Console.ReadLine();
         }
