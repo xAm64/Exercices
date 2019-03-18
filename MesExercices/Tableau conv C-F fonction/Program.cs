@@ -23,57 +23,46 @@ namespace Tableau_conversion_C_F
         }
         #endregion
         #region Procedure de Parse
-        static void Parseur (ref bool parseOk, ref string aParser, ref double numParser)
+        static double Parseur (string message)
         {
-            parseOk = double.TryParse(aParser, out numParser);
+            double numParser;
+            bool ok;
+            do
+            {
+                Console.WriteLine(message);
+                string saisie = Console.ReadLine();
+                ok = double.TryParse(saisie, out numParser);
+                if (!ok)
+                {
+                    Console.WriteLine("Écris moi une valeur en chiffres, je ne suis pas madame soleil !");
+                }
+            }
+            while (!ok);
+            return numParser;
         }
         #endregion
 
         static void Main(string[] args)
         {
-            double Tmin = 0;
-            double Tmax = 0;
-            double Progres = 0;
-            string temp;
+            double tMin = 0;
+            double tMax = 0;
+            double pas = 0;
             double tempCal;
             bool restart;
-            bool ok;
             restart = false;
             Console.WriteLine("Bonjour, l'ordinateur va effectuer un tableau de conversion Celcus <-> Farenight");
             do
             {
-                Console.WriteLine("Quelle est l'unitée de temperature à calculer ? (C ou F)");
+                Console.WriteLine("Quelle est l'unitée de temperature à calculer ? (C ou F)");//On demande à l'utilisateur de choisir le calcul
                 string unit = Console.ReadLine();
-                if (unit == "C" || unit == "F")
+                if (unit == "C" || unit == "F")//L'utilisateur a fait la bonne saisie
                 {
-                    do
-                    {
-                        ok = true;
-                        Console.WriteLine("Temperature de départ ?");
-                        temp = Console.ReadLine();
-                        Parseur(ref ok, ref temp, ref Tmin);
-                        if (!ok)
-                        {
-                            Console.WriteLine("Écrivez la valeur en chiffres! je ne suis pas voyant !");
-                            Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
-                            Console.ReadLine();
-                        }
-                    }
-                    while (!ok);
-                    do
-                    {
-                        Console.WriteLine("À quel temperature doit il arrêter ?");
-                        temp = Console.ReadLine();
-                        ok = double.TryParse(temp, out Tmax);
-                        if (!ok)
-                        {
-                            Console.WriteLine("Écrivez la valeur en chiffre, l'ordinateur n'est pas madame soleil !");
-                            Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
-                            Console.ReadLine();
-                        }
-                    }
-                    while (!ok);
-                    if (Tmin > Tmax)
+                    #region Collecte d'info temperatures.
+                    tMin = Parseur("Temperature de départ");
+                    tMax = Parseur("Temperature d'arrêt");
+                    #endregion
+                    #region Erreur inversion des temperatures
+                    if (tMin > tMax)
                     {
                         Console.WriteLine("Une inversion a été détecter entre la temperature minimale et maximale !");
                         Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
@@ -81,28 +70,19 @@ namespace Tableau_conversion_C_F
 
                         restart = true;
                     }
+                    #endregion
                     else
                     {
-                        do
-                        {
-                            Console.WriteLine("De combien on monte à chaque lignes ?");
-                            temp = Console.ReadLine();
-                            ok = double.TryParse(temp, out Progres);
-                            if (!ok)
-                            {
-                                Console.WriteLine("À ce jour l'ordinateur n'a pas le don de lire dans vos pensées, mais il sait bien calculer si on lui donne des chiffres !");
-                                Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
-                                Console.ReadLine();
-                            }
-                        }
-                        while (!ok);
-
+                        #region Collecte du pas
+                        pas = Parseur("Quel est le pas de montée");
+                        #endregion
+                        #region Calcul de °C > °F
                         if (unit == "C")
                         {
                             Console.WriteLine("Appuyer sur entrée (le coussin entrée est accépter) pour commencer le calcul");
                             double i;
                             Console.ReadLine();
-                            for (i = Tmin; i <= Tmax; i += Progres)
+                            for (i = tMin; i <= tMax; i += pas)
                             {
                                 tempCal = ConversionC(i);
                                 Console.WriteLine("{0}°{1} = {2}°F", i, unit, tempCal);
@@ -110,12 +90,14 @@ namespace Tableau_conversion_C_F
                             Console.WriteLine("Si vous souhaiter faire un nouveau calcul appuyer sur la touche O");
                             restart = Console.ReadKey().Key == ConsoleKey.O;
                         }
+                        #endregion
+                        #region Calcul de °F > °C
                         else
                         {
                             Console.WriteLine("Appuyer sur une touche pour commencer le calcul");
                             double i;
                             Console.ReadLine();
-                            for (i = Tmin; i <= Tmax; i += Progres)
+                            for (i = tMin; i <= tMax; i += pas)
                             {
                                 tempCal = ConversionF(i);
                                 Console.WriteLine("{0}°{1} = {2}°C", i, unit, tempCal);
@@ -123,9 +105,10 @@ namespace Tableau_conversion_C_F
                             Console.WriteLine("Si vous souhaiter faire un nouveau calcul appuyer sur la touche O");
                             restart = Console.ReadKey().Key == ConsoleKey.O;
                         }
+                        #endregion
                     }
                 }
-                else
+                else//L'utilisateur c'est trompé dans la demande de calcul
                 {
 
                     Console.WriteLine("À ce jour l'ordinateur na pas le pouvoir de lire dans vos pensées !");
@@ -138,6 +121,7 @@ namespace Tableau_conversion_C_F
 
             }
             while (restart);
+            Console.WriteLine("Au revoir");
             Console.ReadLine();
         }
     }
