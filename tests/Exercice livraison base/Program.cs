@@ -9,36 +9,15 @@ namespace Gestion_livraison
     class Program
     {
         static string saisie;
-        #region Saisie de l'utilisateur
-        static void SaisieClient (ref int placementIndex, ref bool restart)
-        {
-            string[] num_client = new string[]//numéro du client
-            {
-                "43A", "54A", "62B", "74B", "85B", "93C", "27C", "33D", "45D", "56F", "64B",
-            };
-            Console.WriteLine("Écrivez le code client");
-            string saisie = Console.ReadLine();
-            int index = 0;
-            while((index < num_client.Length) && (saisie != num_client[index]))
-            {
-                index++;
-            }
-            if (index < num_client.Length)
-            {
-                placementIndex = index;
-            }
-            else
-            {
-                Console.WriteLine("Le client n'existe pas");
-                restart = true;
-            }
-        }
-        #endregion
+
 
         static void Main(string[] args)
         {
             #region Tableaux
-
+            string[] num_client = new string[]//numéro du client
+            {
+                "43A", "54A", "62B", "74B", "85B", "93C", "27C", "33D", "45D", "56F", "64B",
+            };
             string[] noms = new string[]//nom du client
             {
                 "Aristide Barnit", "Joseph Loseille", "Léon Nidas", "Gaston Choconnou", "Louise Chimelle", "Justin Bribou", "Nicolas Metrel", "Léonite Caravane", "Albert Etbasque", "Jules Moche", "Etchgaray Manex",
@@ -64,15 +43,17 @@ namespace Gestion_livraison
             do
             {
                 #region Recherche du client
-                int place = 0;
-                bool fail = false;
-                bool reset = false;
-                do
+                Console.WriteLine("Numéro du client");//recherche du client
+                saisie = Console.ReadLine();
+
+                int index = 0;
+                while ((index < num_client.Length) && (saisie != num_client[index]))//recherche du numéro client
                 {
-                    SaisieClient(ref place, ref fail);
-                    if ()
+                    index++;
                 }
-                while (reset = true);
+                #endregion
+                if (index < num_client.Length)//condition trouvé
+                {
                     Console.WriteLine("Le numéro corespondant a été trouvé");
                     #region Indique les règles de livraison
                     int numJour = jour[index];//recherche le jour interdit
