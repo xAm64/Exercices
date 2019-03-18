@@ -8,12 +8,13 @@ namespace Calcul_aire_cercle
 {
     class Program
     {
-
+        #region Formule calcul
         static double CalculAire (double _ray, double _an)
         {
             double aire = Math.PI * (_ray * _ray) * _an / 360;
             return aire;
         }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -24,6 +25,7 @@ namespace Calcul_aire_cercle
             bool ok;
             do
             {
+
                 Console.WriteLine("Je vais calculer l'aire d'un cercle, pour commencer quel utités utilisons nous ?");
                 string unit = Console.ReadLine();
                 do

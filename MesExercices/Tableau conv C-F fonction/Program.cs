@@ -8,22 +8,32 @@ namespace Tableau_conversion_C_F
 {
     class Program
     {
-        static double ConversionC (double _a)
+        #region Convertisseur Celsius en Fahrenheit
+        static double ConversionC (double valCelsius)
         {
-            double thmp = (_a * 9 / 5) + 32;
-            return thmp;
+            double fahrenheit = (valCelsius * 9 / 5) + 32;//convertis les Celsius en Fahrenheit
+            return fahrenheit;
         }
-        static double ConversionF (double _a)
+        #endregion
+        #region Convertisseur Fahrenheit en Celsius
+        static double ConversionF (double valFahrenheit)
         {
-            double thmp = (_a - 32) * 5 / 9;
-            return thmp;
+            double Celsius = (valFahrenheit - 32) * 5 / 9;//convertis les Fahrenheit en Celsius
+            return Celsius;
         }
+        #endregion
+        #region Procedure de Parse
+        static void Parseur (ref bool parseOk, ref string aParser, ref double numParser)
+        {
+            parseOk = double.TryParse(aParser, out numParser);
+        }
+        #endregion
 
         static void Main(string[] args)
         {
-            double Tmin;
-            double Tmax;
-            double Progres;
+            double Tmin = 0;
+            double Tmax = 0;
+            double Progres = 0;
             string temp;
             double tempCal;
             bool restart;
@@ -38,12 +48,13 @@ namespace Tableau_conversion_C_F
                 {
                     do
                     {
+                        ok = true;
                         Console.WriteLine("Temperature de départ ?");
                         temp = Console.ReadLine();
-                        ok = double.TryParse(temp, out Tmin);
+                        Parseur(ref ok, ref temp, ref Tmin);
                         if (!ok)
                         {
-                            Console.WriteLine("Écrivez la valeur en chiffres! ceci est un ordinateur, pas une voyante !");
+                            Console.WriteLine("Écrivez la valeur en chiffres! je ne suis pas voyant !");
                             Console.WriteLine("Appuyer sur la touche entrée pour recommencer");
                             Console.ReadLine();
                         }

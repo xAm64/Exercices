@@ -9,7 +9,7 @@ namespace Calcul_aire_triangle
     class Program
     {
 
-        static double CalculAire(double _a, double _b, double _c)
+        static double CalculAire(double _a, double _b, double _c)//le faire sous forme de procédure
         {
             double p = _a + _b + _c;
             double aire = Math.Sqrt(p/2 * (p / 2 - _a) * (p / 2 - _b) * (p / 2 - _c));

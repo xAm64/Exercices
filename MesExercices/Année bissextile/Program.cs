@@ -8,6 +8,7 @@ namespace Année_bissextile
 {
     class Program
     {
+        #region Formule de calcul
         static bool Bissextile (int _a)
         {
             bool sortie;
@@ -28,6 +29,7 @@ namespace Année_bissextile
             }
             return sortie;
         }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -39,6 +41,7 @@ namespace Année_bissextile
 
             do
             {
+                #region Partie text
                 do
                 {
                     Console.WriteLine("Entrer une année");
@@ -61,10 +64,12 @@ namespace Année_bissextile
                 }
                 Console.WriteLine("Un autre essaie ?");
                 reset = Console.ReadKey().Key == ConsoleKey.O;
+                #endregion
             }
             while (reset);
             Console.WriteLine("Au revoir");
             Console.ReadLine();
+            
         }
     }
 }
