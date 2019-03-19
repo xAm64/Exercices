@@ -11,14 +11,14 @@ namespace Gestion_livraison
         static string saisie;
 
         #region Saisie de l'utilisateur
-        static void SaisieClient (ref int placementIndex, ref bool error)
+        static bool NumeroCLient (ref int placementIndex, string saisie)
         {
+            bool pass;
             string[] num_client = new string[]
             {
                 "43A", "54A", "62B", "74B", "85B", "93C", "27C", "33D", "45D", "56F", "64B",
             };
-            Console.WriteLine("Écrivez le code client");
-            string saisie = Console.ReadLine();
+
             int index = 0;
             while((index < num_client.Length) && (saisie != num_client[index]))
             {
@@ -27,13 +27,13 @@ namespace Gestion_livraison
             if (index < num_client.Length)
             {
                 placementIndex = index;
-                error = false;
+                pass = true;
             }
             else
             {
-                Console.WriteLine("Le client n'existe pas");
-                error = true;
+                pass = false;
             }
+            return pass;
         }
         #endregion
 
@@ -147,14 +147,20 @@ namespace Gestion_livraison
             bool restart = false;
             do
             {
-                int place = 0;
-                bool reset = false;
                 #region Recherche du client
+                int place = 0;
+                bool pass = true;
                 do
                 {
-                    SaisieClient(ref place, ref reset);
+                    Console.WriteLine("Écrire le numéro du client");
+                    saisie = Console.ReadLine();
+                    pass = NumeroCLient(ref place, saisie);
+                    if (!pass)
+                    {
+                        Console.WriteLine("Le clienbt n'existe pas");
+                    }
                 }
-                while (reset);
+                while (!pass);
                 #endregion
 
                 #region Indique les règles de livraison
@@ -166,7 +172,6 @@ namespace Gestion_livraison
                 #endregion
 
                 #region choix du jour de livraison
-                bool pass;
                 int jourDemande = 0;
                 do
                 {
@@ -193,6 +198,7 @@ namespace Gestion_livraison
                     else
                     {
                         Console.WriteLine("La livraison est possible ce jour");
+                        pass = true;
                     }
                 }
                 while (!pass);
