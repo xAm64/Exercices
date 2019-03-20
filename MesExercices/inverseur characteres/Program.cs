@@ -8,16 +8,23 @@ namespace inverseur_characteres
 {
     class Program
     {
-        static void inverseur (string _mot)
+        #region inverseur de charactères
+        static void Inverseur (ref char[] _mot)
         {
-            for (int i = _mot.Length -1 ; i >= 0; i--)
+            int j = _mot.Length - 1;
+            for (int i= 0; i < (_mot.Length /2); i++)
             {
-                Console.Write(_mot[i]);
+                char x = _mot[i];
+                _mot[i] = _mot[j];
+                _mot[j] = x;
+                j--;
             }
-            
+            #region version facile
             //string rev = new string(mot.ToCharArray().Reverse().ToArray());
             //mot = rev;
+            #endregion
         }
+        #endregion
 
         static void Main(string[] args)
         {
@@ -26,15 +33,16 @@ namespace inverseur_characteres
             {
                 Console.WriteLine("Saisir le text de votre choix, je vais l'inverser");
                 string monText = Console.ReadLine();
-                Console.Write("Le mot {0} écrit à l'envers est: ", monText);
-                inverseur(monText);
+                char[] textInverse = monText.ToCharArray();
+                Inverseur(ref textInverse);
+                Console.WriteLine("La saisie {0} fait: {1} en inversé.",monText, new String(textInverse));
                 Console.ReadLine();
-                Console.WriteLine("\n Un autre essaie ?");
+                Console.WriteLine("Un autre essaie ?");
                 restart = Console.ReadKey().Key == ConsoleKey.O;
             }
             while (restart);
 
-            Console.WriteLine("Au revoir");
+            Console.WriteLine("\nAu revoir");
             Console.ReadLine();
         }
     }

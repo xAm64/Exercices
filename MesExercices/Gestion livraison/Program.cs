@@ -157,7 +157,7 @@ namespace Gestion_livraison
                     pass = NumeroCLient(ref place, saisie);
                     if (!pass)
                     {
-                        Console.WriteLine("Le clienbt n'existe pas");
+                        Console.WriteLine("Le client n'existe pas");
                     }
                 }
                 while (!pass);
@@ -242,7 +242,7 @@ namespace Gestion_livraison
             }
             while (restart);
 
-            Console.WriteLine("Au revoir");
+            Console.WriteLine("\nAu revoir");
             Console.ReadLine();
         }
     }

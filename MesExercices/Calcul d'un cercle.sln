@@ -3,41 +3,39 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul d'un cercle", "Calcul d'un cercle\Calcul d'un cercle.csproj", "{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Afpa 1-Calcul d'un cercle", "Calcul d'un cercle\TP Afpa 1-Calcul d'un cercle.csproj", "{40012C1B-1E8B-4E2B-94CD-953CEE44DF72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COnversion ºC ºF simple", "ConsoleApp1\COnversion ºC ºF simple.csproj", "{5D9120C8-5478-4BD8-B529-10F57FB2CBB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul inclinaison solaire", "Calcul inclinaison solaire\Calcul inclinaison solaire.csproj", "{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Perso Calcul inclinaison solaire", "Calcul inclinaison solaire\TP Perso Calcul inclinaison solaire.csproj", "{D7A2EF47-26DD-4DB9-B8CA-FF20017181DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul moyenne", "ConsoleApp2\Calcul moyenne.csproj", "{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Algo 3 Calcul moyenne", "ConsoleApp2\TP Algo 3 Calcul moyenne.csproj", "{78CD58C4-AA23-4F10-BA55-944FE6BD28A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul aire cercle", "Calcul aire cercle\Calcul aire cercle.csproj", "{32B4CE19-3FE4-4FF0-936E-7326A2675E1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inversion nombre a et b", "inversion nombre a et b\inversion nombre a et b.csproj", "{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Algo 1 inversion nombre a et b", "inversion nombre a et b\TP Algo 1 inversion nombre a et b.csproj", "{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "for", "for\for.csproj", "{28D441C5-391F-4D7A-B0E3-2A689102F4B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Afpa 4 Exercice avion", "Exercice avion\TP Afpa 4 Exercice avion.csproj", "{DD83A5FA-B792-432A-8E9D-F317F385A31A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercice avion", "Exercice avion\Exercice avion.csproj", "{DD83A5FA-B792-432A-8E9D-F317F385A31A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Afpa 3 -Tableau conversion C-F", "Tableau conversion C-F\TP Afpa 3 -Tableau conversion C-F.csproj", "{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tableau conversion C-F", "Tableau conversion C-F\Tableau conversion C-F.csproj", "{5B5C8BB3-6DE8-420A-ACD5-A37F33FB134B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Afpa 5 compteur-caracteres", "compteur-caracteres\TP Afpa 5 compteur-caracteres.csproj", "{16F3F871-93DF-4ECF-B452-5FF8C41D944D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "compteur-caracteres", "compteur-caracteres\compteur-caracteres.csproj", "{16F3F871-93DF-4ECF-B452-5FF8C41D944D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Afpa 6 - Gestion livraison", "Gestion livraison\TP Afpa 6 - Gestion livraison.csproj", "{C6B8CB2E-8D9E-4469-A557-067C01127BA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion livraison", "Gestion livraison\Gestion livraison.csproj", "{C6B8CB2E-8D9E-4469-A557-067C01127BA9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul aire triangle", "Calcul aire triangle\Calcul aire triangle.csproj", "{0F87C2E7-8ED8-475D-B21A-60D9329C27E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Algo 2 Calcul aire triangle", "Calcul aire triangle\TP Algo 2 Calcul aire triangle.csproj", "{0F87C2E7-8ED8-475D-B21A-60D9329C27E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul Moyenne 2nbrs", "Calcul Moyenne 2nbrs\Calcul Moyenne 2nbrs.csproj", "{4F670AFE-6DD6-4CEB-905A-E650FF8BAABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Année bissextile", "Année bissextile\Année bissextile.csproj", "{7A112CFB-AB62-4F9C-BF7C-0952D73383F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Algo 4 Année bissextile", "Année bissextile\TP Algo 4 Année bissextile.csproj", "{7A112CFB-AB62-4F9C-BF7C-0952D73383F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calcul jour", "calcul jour\calcul jour.csproj", "{5C80D43C-5039-4B75-B422-CD06B7D246DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Algo 5 calcul jour", "calcul jour\TP Algo 5 calcul jour.csproj", "{5C80D43C-5039-4B75-B422-CD06B7D246DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "inverseur characteres", "inverseur characteres\inverseur characteres.csproj", "{69598A0B-1154-4C80-B091-5E5EE21097CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Algo 6 inverseur characteres", "inverseur characteres\TP Algo 6 inverseur characteres.csproj", "{69598A0B-1154-4C80-B091-5E5EE21097CC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tableau conv C-F fonction", "Tableau conv C-F fonction\Tableau conv C-F fonction.csproj", "{106A732E-62DC-4DC4-B185-CD3FD749C6D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calcul heures", "Calcul heures\Calcul heures.csproj", "{966A9599-C05D-4D14-AE2E-5F4BB38073F7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP Perso Calcul heures", "Calcul heures\TP Perso Calcul heures.csproj", "{966A9599-C05D-4D14-AE2E-5F4BB38073F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,10 +67,6 @@ Global
 		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8ADDDCA-91BE-48F5-9B74-EC9937A62B95}.Release|Any CPU.Build.0 = Release|Any CPU
-		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28D441C5-391F-4D7A-B0E3-2A689102F4B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD83A5FA-B792-432A-8E9D-F317F385A31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
