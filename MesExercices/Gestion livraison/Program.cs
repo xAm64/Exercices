@@ -54,11 +54,11 @@ namespace Gestion_livraison
             };
             string[] days = new string[]//noms des jours
             {
-                "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi",
+                "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi",
             };
             string[] month = new string[]//noms des mois
             {
-                "Aucun", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre",
+                "aucun", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre",
             };
             jourInterdit = jour[indexClient];
             moisInterdit = mois[indexClient];
@@ -92,7 +92,7 @@ namespace Gestion_livraison
             bool pass = true;
             string[] days = new string[]//noms des jours
             {
-                "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi",
+                "dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi",
             };
             if (days.Contains(saisie))
             {
@@ -120,7 +120,7 @@ namespace Gestion_livraison
             bool pass = true;
             string[] month = new string[]//noms des mois
             {
-                "Aucun", "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre",
+                "aucun", "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre",
             };
             if (month.Contains(saisie))
             {
