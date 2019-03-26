@@ -184,11 +184,11 @@ namespace Gestion_livraison
                         Console.WriteLine("L'erreur suivate à été détecter: ");
                         if (!pass && jourDemande == 99)
                         {
-                            Console.Write("Vous avez écrit n'importe quoi");
+                            Console.Write("Vous avez écrit n'importe quoi, et l'ordinateur n'est pas madame soleil !");
                         }
                         if ((jourDemande < 1 || jourDemande > 6) && jourDemande != 99)
                         {
-                            Console.Write("il y a que 7 jours dans une semaine et personne en travaille un dimanche");
+                            Console.Write("il y a que 7 jours dans une semaine et personne en travaille un dimanche. ");
                         }
                         if (jourDemande == jourInterdit)
                         {
