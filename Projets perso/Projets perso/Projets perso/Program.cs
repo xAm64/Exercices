@@ -56,7 +56,7 @@ namespace Projets_perso
                 restart = false;
                 refaire = false;
                 Console.WriteLine("Jouons au loto ensemble");
-                Console.WriteLine("Rappel des règles : le joueur choisis 5 numéros (entre 1 à 49) et un numéro chance (entre 1 et 10), je tire les numéro et on verra si vous avez de la chance");
+                Console.WriteLine("Rappel des règles : le joueur choisis 5 numéros (entre 1 à 49) et un numéro chance (entre 1 et 10), je tire les numéro et on verra si vous avez de la chance\nRappel important l'argent de ce programme est virtuel");
                 #region Le jour choisit les 5 numéros
                 do
                 {
@@ -103,7 +103,7 @@ namespace Projets_perso
                     }
                     while (!ok);
                     #endregion
-                    #region Saisie nulero 4
+                    #region Saisie numero 4
                     do
                     {
                         ok = true;
@@ -311,13 +311,27 @@ namespace Projets_perso
                 }
                 #endregion
                 #region Affichage du gain
-                if (nCHance == true)
+                if (nbNum <= 1)
                 {
-                    Console.WriteLine("Vous avez troués: {0} numéro et le numéro chance, vous avez gagné {1}€ (virtuel bien sur)", nbNum, gain);
+                    if (nCHance == true)
+                    {
+                        Console.WriteLine("Vous avez trouvé {0} bon numéro, mais vous avez trouvé le numéro chance: {1}. Vous gagnez {2} Euros",nbNum, tc, gain);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vous n'avez pas trouvé assez de numéros, vous gagner {0} Euro", gain);
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Vous avez troués: {0} numéro, vous avez gagnés {1}€ (virtuel bien sur)", nbNum, gain);
+                    if (nCHance == true)
+                    {
+                        Console.WriteLine("Vous avez troués: {0} numéros et le numéro chance, vous avez gagné {1} Euros", nbNum, gain);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Vous avez troués: {0} numéros, vous avez gagnés {1} Euros", nbNum, gain);
+                    }
                 }
                 #endregion
                 Console.WriteLine("Un nouvel essaie ?");
