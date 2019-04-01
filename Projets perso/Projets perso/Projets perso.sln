@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tirage du loto", "Projets perso\Tirage du loto.csproj", "{4323FB89-B96F-4A1C-AB45-D1286A41C764}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouteille", "Bouteille\Bouteille.csproj", "{729C3587-5836-4CDD-A328-8A248FE0B9BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{4323FB89-B96F-4A1C-AB45-D1286A41C764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4323FB89-B96F-4A1C-AB45-D1286A41C764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4323FB89-B96F-4A1C-AB45-D1286A41C764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -45,19 +45,104 @@ namespace Projets_perso
             while (!ok);
         }
         #endregion
+        #region Calcul gains
+        static int CalculGains (int n1, int t1, int n2, int t2, int n3, int t3, int n4, int t4, int n5, int t5, int nc, int tc, ref bool nCHance, ref byte nbNum)
+        {
+            #region compteur bon numéros
+            if (n1 == t1 || n1 == t2 || n1 == t3 || n1 == t4 || n1 == t5)
+            {
+                nbNum++;
+            }
+            if (n2 == t1 || n2 == t2 || n2 == t3 || n2 == t4 || n2 == t5)
+            {
+                nbNum++;
+            }
+            if (n3 == t1 || n3 == t2 || n3 == t3 || n3 == t4 || n3 == t5)
+            {
+                nbNum++;
+            }
+            if (n4 == t1 || n4 == t2 || n4 == t3 || n4 == t4 || n4 == t5)
+            {
+                nbNum++;
+            }
+            if (n5 == t1 || n5 == t2 || n5 == t3 || n5 == t4 || n5 == t5)
+            {
+                nbNum++;
+            }
+            if (nc == tc)
+            {
+                nCHance = true;
+            }
+            #endregion
+            #region Calcul gain
+            int gain = 0;
+            if (nCHance == true)
+            {
+                gain += 5;
+            }
+            if (nbNum == 2)
+            {
+                if (nCHance == true)
+                {
+                    gain += 50;
+                }
+                else
+                {
+                    gain += 10;
+                }
+            }
+            if (nbNum == 3)
+            {
+                if (nCHance == true)
+                {
+                    gain += 500;
+                }
+                else
+                {
+                    gain += 100;
+                }
+            }
+            if (nbNum == 4)
+            {
+                if (nCHance == true)
+                {
+                    gain += 3000;
+                }
+                else
+                {
+                    gain += 1000;
+                }
+            }
+            if (nbNum == 5)
+            {
+                if (nCHance == true)
+                {
+                    gain += 5000000;
+                }
+                else
+                {
+                    gain += 1000000;
+                }
+            }
+            #endregion
+            return gain;
+        }
+        
+                #endregion
 
         static void Main(string[] args)
         {
+            //Variables
             bool restart, ok, refaire;
             string saisie;
             int n1, n2, n3, n4, n5, nc;
-            do
+            do //démarrage algorythmie
             {
                 restart = false;
                 refaire = false;
                 Console.WriteLine("Jouons au loto ensemble");
                 Console.WriteLine("Rappel des règles : le joueur choisis 5 numéros (entre 1 à 49) et un numéro chance (entre 1 et 10), je tire les numéro et on verra si vous avez de la chance\nRappel important l'argent de ce programme est virtuel");
-                #region Le jour choisit les 5 numéros
+                #region Le joueur choisit ses 5 numéros
                 do
                 {
                     #region Saisie Numero 1
@@ -147,7 +232,7 @@ namespace Projets_perso
                         ok = int.TryParse(saisie, out nc);
                         if (nc < 1 || nc > 10)
                         {
-                            Console.WriteLine("Vous voulez vraiment perdre, si vous écrivez un numéro qui n'existe pas vous ne pouvez pas gagner");
+                            Console.WriteLine("Si vous voulez une chance de gagner, il faut choisir un numéro qui existe (entre 1 et 10).");
                             ok = false;
                         }
                         if (!ok)
@@ -243,74 +328,13 @@ namespace Projets_perso
                 Console.WriteLine("Le numéro chance est: {0}", tc);
                 #endregion
                 #endregion
-                #region gains
+                #region calcul gain
                 byte nbNum = 0;
                 bool nCHance = false;
-                Console.WriteLine("Voici les numéros tirés: {0}, {1}, {2}, {3}, {4}, et le numéro chance {5}\nVous avez joué: {6}, {7}, {8}, {9}, {10} et le numéro chance {11}", t1, t2, t3, t4, t5, tc, n1, n2, n3, n4, n5, nc);
-                if (n1 == t1 || n1 == t2 || n1 == t3 || n1 == t4 || n1 == t5)
-                {
-                    nbNum++;
-                }
-                if (n2 == t1 || n2 == t2 || n2 == t3 || n2 == t4 || n2 == t5)
-                {
-                    nbNum++;
-                }
-                if (n3 == t1 || n2 == t2 || n3 == t3 || n3 == t4 || n3 == t5)
-                {
-                    nbNum++;
-                }
-                if (n4 == t1 || n4 == t2 || n4 == t3 || n4 == t4 || n4 == t5)
-                {
-                    nbNum++;
-                }
-                if (n5 == t1 || n5 == t2 || n5 == t3 || n5 == t4 || n5 == t5)
-                {
-                    nbNum++;
-                }
-                if (nc == tc)
-                {
-                    nCHance = true;
-                }
-                int gain = 0;
-                if (nCHance == true)
-                {
-                    gain += 5;
-                }
-                if (nbNum == 3)
-                {
-                    if (nCHance == true)
-                    {
-                        gain += 500;
-                    }
-                    else
-                    {
-                        gain += 100;
-                    }
-                }
-                if (nbNum == 4)
-                {
-                    if (nCHance == true)
-                    {
-                        gain += 3000;
-                    }
-                    else
-                    {
-                        gain += 1000;
-                    }
-                }
-                if (nbNum == 5)
-                {
-                    if (nCHance == true)
-                    {
-                        gain += 5000000;
-                    }
-                    else
-                    {
-                        gain += 1000000;
-                    }
-                }
+                int gain = CalculGains(n1, t1, n2, t2, n3, t3, n4, t4, n5, t5, nc, tc, ref nCHance, ref nbNum);
                 #endregion
                 #region Affichage du gain
+                Console.WriteLine("Vous avez jouer: {0}, {1}, {2}, {3}, {4}, {5}\nLes numéro tirés sont: {6}, {7}, {8}, {9}, {10}, {11}.", n1, n2, n3, n4, n5, nc, t1, t2, t3, t4, t5, tc);
                 if (nbNum <= 1)
                 {
                     if (nCHance == true)
