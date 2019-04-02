@@ -8,9 +8,27 @@ namespace Bouteille
 {
     class Programme
     {
+
+        #region Parseur
+        static bool Parseur (string saisie, ref byte nombre)
+        {
+            bool ok = byte.TryParse(saisie, out nombre);
+            if (!ok)
+            {
+                Console.WriteLine("Écrit moi des chiffres, je ne suis pas madame soleil");
+                nombre = 0;
+            }
+            return ok;
+        }
+        #endregion
+
         static void Main(string[] args)
         {
+            
+
             bool restart = false;
+            bool ok;
+            byte pourcent = 0;
             LaBouteille eau = new LaBouteille();
 
                 string saisie;
@@ -31,11 +49,37 @@ namespace Bouteille
                     }
                     if (saisie == "remplir")
                     {
-                        eau.Remplir();
+                        do
+                        {
+                            ok = true;
+                            Console.WriteLine("De combien de % on remplit ?");
+                            saisie = Console.ReadLine();
+                            ok = Parseur(saisie, ref pourcent);
+                            if (pourcent == 0 || pourcent > 100)
+                            {
+                                Console.WriteLine("Vous ne pouvez pas saisir une valeur au delà de la capacitée de la bouteille");
+                                ok = false;
+                            }
+                        }
+                        while (!ok);
+                        eau.Remplir(pourcent);
                     }
                     if (saisie == "vider")
                     {
-                        eau.Vider();
+                        do
+                        {
+                            ok = true;
+                            Console.WriteLine("De combien de % on vide ?");
+                            saisie = Console.ReadLine();
+                            ok = byte.TryParse(saisie, out pourcent);
+                            if (pourcent == 0 || pourcent > 100)
+                            {
+                                Console.WriteLine("Vous ne pouvez pas saisir uen valeur supérieur à la capacitée de la bouteille");
+                                ok = false;
+                            }
+                        }
+                        while (!ok);
+                        eau.Vider(pourcent);
                     }
                 }
                 else

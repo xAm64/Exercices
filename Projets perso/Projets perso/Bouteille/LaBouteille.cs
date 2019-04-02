@@ -8,10 +8,11 @@ namespace Bouteille
     public class LaBouteille
     {
         private bool ouvert = false;
-        private double contenue = 1;
+        string etatBout = "fermée";
+        private double contenue = 100;
 
         #region vider
-        public double Vider()
+        public double Vider(double valeur)
         {
             if (contenue == 0)
             {
@@ -21,7 +22,12 @@ namespace Bouteille
             {
                 if (ouvert == true)
                 {
-                    contenue = 0;
+                    contenue -= valeur;
+                    if (contenue <0)
+                    {
+                        Console.WriteLine("La bouteille n'étais pas assez remplie et n'a pas pu satisfaire votre besoin");
+                        contenue = 0;
+                    }
                 }
                 else
                 {
@@ -33,9 +39,9 @@ namespace Bouteille
         #endregion
 
         #region Remplir
-        public double Remplir()
+        public double Remplir(double valeur)
         {
-            if (contenue == 1)
+            if (contenue >= 100)
             {
                 Console.WriteLine("La bouteille est déjà pleine");
             }
@@ -43,7 +49,12 @@ namespace Bouteille
             {
                 if (ouvert == true)
                 {
-                    contenue = 1;
+                    contenue += valeur;
+                    if (contenue >100)
+                    {
+                        Console.WriteLine("La bouteille a débordé et vous vous en êtes mit partout");
+                        contenue = 100;
+                    }
                 }
                 else
                 {
@@ -65,6 +76,7 @@ namespace Bouteille
             else
             {
                 ouvert = true;
+                etatBout = "ouverte";
                 return ouvert;
             }
         }
@@ -81,16 +93,27 @@ namespace Bouteille
             else
             {
                 ouvert = false;
+                etatBout = "fermée";
                 return ouvert;
             }
         }
         #endregion
-
         #region Message
         public override string ToString()
         {
-            return "État de la bouteille: ouvert= " +ouvert+ " contenue= " +contenue;
+            return "La bouteille est: "+etatBout+" est remplie à " +contenue+ "%";
         }
         #endregion
+
+        //public double Remplir(double valeur)
+        //{
+        //    contenue += valeur;
+        //    return valeur;
+        //}
+        //public double Vider(double valeur)
+        //{
+        //    contenue -= valeur;
+        //    return valeur;
+        //}
     }
 }
