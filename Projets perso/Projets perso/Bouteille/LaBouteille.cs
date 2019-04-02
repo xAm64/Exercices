@@ -13,8 +13,21 @@ namespace Bouteille
         #region vider
         public double Vider()
         {
-            contenue = 0;
-
+            if (contenue == 0)
+            {
+                Console.WriteLine("La bouteille est déjà vide");
+            }
+            else
+            {
+                if (ouvert == true)
+                {
+                    contenue = 0;
+                }
+                else
+                {
+                    Console.WriteLine("La bouteille n'est pas ouverte");
+                }
+            }
             return contenue;
         }
         #endregion
@@ -22,7 +35,21 @@ namespace Bouteille
         #region Remplir
         public double Remplir()
         {
-            contenue = 1;
+            if (contenue == 1)
+            {
+                Console.WriteLine("La bouteille est déjà pleine");
+            }
+            else
+            {
+                if (ouvert == true)
+                {
+                    contenue = 1;
+                }
+                else
+                {
+                    Console.WriteLine("La bouteille n'est pas ouverte");
+                }
+            }
             return contenue;
         }
         #endregion
@@ -30,17 +57,32 @@ namespace Bouteille
         #region ouvrir
         public bool Ouvrir()
         {
-            ouvert = true;
-
-            return ouvert;
+            if (ouvert == true)
+            {
+                Console.WriteLine("La bouteille est déjà ouverte");
+                return ouvert;
+            }
+            else
+            {
+                ouvert = true;
+                return ouvert;
+            }
         }
         #endregion
 
         #region fermer
         public bool Fermer()
         {
-            ouvert = false;
-            return ouvert;
+            if (ouvert == false)
+            {
+                Console.WriteLine("La bouteille est déjà fermée");
+                return ouvert;
+            }
+            else
+            {
+                ouvert = false;
+                return ouvert;
+            }
         }
         #endregion
 
