@@ -26,7 +26,7 @@ namespace Bouteille
         {
             
 
-            bool restart = false;
+            bool sortir = false;
             bool ok;
             byte pourcent = 0;
             LaBouteille eau = new LaBouteille();
@@ -35,9 +35,9 @@ namespace Bouteille
                 Console.WriteLine(eau);
             do
             {
-                Console.WriteLine("Que voulez-vous faire ?\nouvrir ? fermer ? remplir? vider?");
+                Console.WriteLine("Que voulez-vous faire ?\nouvrir ? fermer ? remplir? vider? sortir ?");
                 saisie = Console.ReadLine();
-                if (saisie == "ouvrir" || saisie == "fermer" || saisie == "remplir" || saisie == "vider")
+                if (saisie == "ouvrir" || saisie == "fermer" || saisie == "remplir" || saisie == "vider" || saisie == "sortir")
                 {
                     if (saisie == "ouvrir")
                     {
@@ -81,16 +81,18 @@ namespace Bouteille
                         while (!ok);
                         eau.Vider(pourcent);
                     }
+                    if (saisie == "sortir")
+                    {
+                        sortir = true;
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Vous avez écrit n'impote quoi");
                 }
                 Console.WriteLine(eau);
-                Console.WriteLine("On arrête là ?");
-                restart = Console.ReadKey().Key == ConsoleKey.O;
             }
-            while (restart == false);
+            while (sortir == false);
             Console.WriteLine("Au revoir");
             Console.ReadLine();
         }
