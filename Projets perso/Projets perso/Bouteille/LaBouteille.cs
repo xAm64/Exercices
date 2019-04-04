@@ -11,6 +11,7 @@ namespace Bouteille
         string etatBout = "fermée";
         private double contenue = 100;
 
+
         #region vider
         public double Vider(double valeur)
         {
@@ -98,22 +99,12 @@ namespace Bouteille
             }
         }
         #endregion
+
         #region Message
         public override string ToString()
         {
             return "La bouteille est: "+etatBout+" est remplie à " +contenue+ "%";
         }
         #endregion
-
-        //public double Remplir(double valeur)
-        //{
-        //    contenue += valeur;
-        //    return valeur;
-        //}
-        //public double Vider(double valeur)
-        //{
-        //    contenue -= valeur;
-        //    return valeur;
-        //}
     }
 }

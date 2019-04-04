@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pack_de_bouteilles.Bouteille">
+    <Position X="10.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Bouteille.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pack_de_bouteilles.EmbalagePack">
+    <Position X="4.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAICAAA=</HashCode>
+      <FileName>EmbalagePack.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pack_de_bouteilles.Pack2Bouteilles">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACBAAECEAAAAEAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Pack2Bouteilles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

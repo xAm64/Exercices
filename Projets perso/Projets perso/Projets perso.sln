@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tirage du loto", "Projets p
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bouteille", "Bouteille\Bouteille.csproj", "{729C3587-5836-4CDD-A328-8A248FE0B9BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pack de bouteilles", "Pack de bouteilles\Pack de bouteilles.csproj", "{829B2188-CA4C-444A-B712-CAEC6A4E722F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{729C3587-5836-4CDD-A328-8A248FE0B9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829B2188-CA4C-444A-B712-CAEC6A4E722F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829B2188-CA4C-444A-B712-CAEC6A4E722F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829B2188-CA4C-444A-B712-CAEC6A4E722F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829B2188-CA4C-444A-B712-CAEC6A4E722F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
