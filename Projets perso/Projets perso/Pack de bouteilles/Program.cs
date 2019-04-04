@@ -23,7 +23,8 @@ namespace Pack_de_bouteilles
         static void Main(string[] args)
         {
             Pack2Bouteilles pack = new Pack2Bouteilles();
-            
+            Bouteille eau = new Bouteille();
+            EmbalagePack embal = new EmbalagePack();
             bool sortir = false;
             bool ok;
             int nombre;
@@ -72,19 +73,44 @@ namespace Pack_de_bouteilles
                     #region Fermer
                     if (saisie == "fermer")
                     {
-                        Console.WriteLine("Option non codé");
+                        eau.Fermer();
                     }
                     #endregion
                     #region Vider
                     if (saisie == "vider")
                     {
-                        Console.WriteLine("Option non codé");
+                        do
+                        {
+                            ok = true;
+                            Console.WriteLine("De combien de % on vide ?");
+                            saisie = Console.ReadLine();
+                            ok = int.TryParse(saisie, out nombre);
+                            if (nombre <= 0 || nombre >100)
+                            {
+                                Console.WriteLine("La valeur saisie dépasse la capacitée de la bouteille");
+                                ok = false;
+                            }
+                        }
+                        while(!ok) ;
+                        eau.Vider(nombre);
                     }
                     #endregion
                     #region Remplir
                     if (saisie == "remplir")
                     {
-                        Console.WriteLine("Option non codé");
+                        do
+                        {
+                            Console.WriteLine("De combien de % on remplit ?");
+                            saisie = Console.ReadLine();
+                            ok = int.TryParse(saisie, out nombre);
+                            if (nombre <= 0 || nombre >100)
+                            {
+                                Console.WriteLine("La valeur saisie dépasse la capacitée de la bouteille");
+                                ok = false;
+                            }
+                        }
+                        while (!ok);
+                        eau.Remplir(nombre);
                     }
                     #endregion
                     #region Sortie
@@ -100,6 +126,7 @@ namespace Pack_de_bouteilles
                 }
                 #endregion
                 Console.WriteLine(pack);
+                Console.WriteLine(eau);
             }
             while (sortir == false);
             Console.WriteLine("Au revoir");

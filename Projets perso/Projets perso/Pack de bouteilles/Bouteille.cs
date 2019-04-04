@@ -3,16 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Pack_de_bouteilles
-{
-    public class Bouteille
-    {
-        private double contenue;
-        private bool ouvert;
-    }
-}
-
-
 public class Bouteille
 {
     private double contenue;
@@ -124,7 +114,7 @@ public class Bouteille
     {
         ouvert = false;
         contenue = 100;
-        prix = 0;
+        prix = 0.30;
 	}
 
 	public Bouteille(bool _ouvert, double _contenue, double _prix)

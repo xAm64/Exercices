@@ -8,6 +8,7 @@ namespace Pack_de_bouteilles
     public class Pack2Bouteilles
     {
         private List<Bouteille> bouteilles;
+        private EmbalagePack embalage;
         public int nombre;
         private double CalculPrix;
 

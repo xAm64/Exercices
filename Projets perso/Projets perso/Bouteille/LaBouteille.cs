@@ -11,7 +11,6 @@ namespace Bouteille
         string etatBout = "fermée";
         private double contenue = 100;
 
-
         #region vider
         public double Vider(double valeur)
         {
