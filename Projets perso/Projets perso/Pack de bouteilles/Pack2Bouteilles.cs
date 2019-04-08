@@ -9,7 +9,11 @@ namespace Pack_de_bouteilles
     {
         private List<Bouteille> bouteilles;
         public int nombre;
-        private double CalculPrix;
+        private double CalculPrix(double prix)
+        {
+            prix = Bouteille.prix();
+            return prix;
+        }
 
         #region Nombre de bouteilles
         public Pack2Bouteilles()

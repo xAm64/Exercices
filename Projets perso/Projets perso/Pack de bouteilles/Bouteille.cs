@@ -37,7 +37,7 @@ public class Bouteille
             if (ouvert == true)
             {
                 contenue -= valeur;
-                if (contenue >0)
+                if (contenue <0)
                 {
                     Console.WriteLine("La bouteille n'était pas assez remplis et n'a pas pu satisfaire votre besoin");
                     contenue = 0;
