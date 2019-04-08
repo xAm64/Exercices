@@ -20,17 +20,49 @@ namespace Pack_de_bouteilles
             return ok;
         }
         #endregion
+
         static void Main(string[] args)
         {
             Pack2Bouteilles pack = new Pack2Bouteilles();
             Bouteille eau = new Bouteille();
-            EmbalagePack embal = new EmbalagePack();
             bool sortir = false;
             bool ok;
             int nombre;
+            Emballage emballage = Emballage.carton;
             Console.WriteLine(pack);
+            #region Choix de l'emballage
             do
             {
+                ok = true;
+                Console.WriteLine("Choississez l'embalage\n(P)lastique (C)arton (F)ilet");
+                ConsoleKey s = Console.ReadKey().Key;
+                if (s == ConsoleKey.P || s == ConsoleKey.C || s == ConsoleKey.F)
+                {
+                    if (s == ConsoleKey.P)
+                    {
+                        emballage = Emballage.plastique;
+                    }
+                    if (s == ConsoleKey.C)
+                    {
+                        emballage = Emballage.carton;
+                    }
+                    if (s == ConsoleKey.F)
+                    {
+                        emballage = Emballage.filet;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Vous n'avez pas appuyer sur la bonne touche");
+                    ok = false;
+                }
+            }
+            while (!ok);
+            #endregion
+
+            do
+            {
+                Console.WriteLine("L'embalage en " +emballage.ToString()+ " est ouvert");
                 Console.WriteLine("Que voulez-vous faire\najouter ? retirer ¿ ouvrir ? fermer¿ vider? remplir¿ sortir?");
                 string saisie = Console.ReadLine();
                 #region Commandes

@@ -7,7 +7,7 @@ public class Bouteille
 {
     private double contenue;
     private bool ouvert;
-    private double prix;
+    public double prix;
 
     #region Message de la bouteille
     static string MessageBottle(bool ouvert)

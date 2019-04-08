@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bouteille.cs" />
-    <Compile Include="EmbalagePack.cs" />
+    <Compile Include="Embalage.cs" />
     <Compile Include="Pack2Bouteilles.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
