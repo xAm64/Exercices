@@ -9,17 +9,20 @@ namespace Pack_de_bouteilles
     {
         private List<Bouteille> bouteilles;
         public int nombre;
-        private double CalculPrix(double prix)
-        {
-            prix = Bouteille.prix();
-            return prix;
-        }
 
         #region Nombre de bouteilles
         public Pack2Bouteilles()
         {
             nombre = 6;
         }
+        #endregion
+
+        #region Calcul du prix
+        //private double CalculPrix(double prix)
+        //{
+        //    prix * nombre;
+        //    return prix;
+        //}
         #endregion
 
         #region Ajouter

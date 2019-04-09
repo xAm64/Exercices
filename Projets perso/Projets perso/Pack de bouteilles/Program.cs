@@ -25,9 +25,10 @@ namespace Pack_de_bouteilles
         {
             Pack2Bouteilles pack = new Pack2Bouteilles();
             Bouteille eau = new Bouteille();
-            bool sortir = false;
+            bool sortir = false, finBouteille;
             bool ok;
-            int nombre;
+            int nombre, numberBout = 0;
+            string depasse = "La valeur saisie dépasse la capacitée de la bouteille";
             Emballage emballage = Emballage.carton;
             Console.WriteLine(pack);
             #region Choix de l'emballage
@@ -62,11 +63,11 @@ namespace Pack_de_bouteilles
 
             do
             {
-                Console.WriteLine("L'embalage en " +emballage.ToString()+ " est ouvert");
-                Console.WriteLine("Que voulez-vous faire\najouter ? retirer ¿ ouvrir ? fermer¿ vider? remplir¿ sortir?");
+                Console.WriteLine("L'embalage en "+emballage.ToString()+" est ouvert");
+                Console.WriteLine("Que voulez-vous faire\najouter ? retirer interagir ? sortir?");
                 string saisie = Console.ReadLine();
                 #region Commandes
-                if (saisie == "ajouter" || saisie == "retirer" || saisie == "ouvrir" || saisie == "fermer" || saisie == "vider" || saisie == "remplir" || saisie == "sortir")
+                if (saisie == "ajouter" || saisie == "retirer" || saisie == "interagir" || saisie == "sortir")
                 {
                     #region Ajouter
                     if (saisie == "ajouter")
@@ -76,12 +77,13 @@ namespace Pack_de_bouteilles
                             nombre = 0;
                             Console.WriteLine("Combien on ajoute ?");
                             saisie = Console.ReadLine();
-                            ok = int.TryParse(saisie, out nombre);
+                            ok = Parseur(saisie, ref nombre);
                             pack.Ajouter(nombre);
                         }
                         while (!ok);
                     }
                     #endregion
+
                     #region Retirer
                     if (saisie == "retirer")
                     {
@@ -90,75 +92,127 @@ namespace Pack_de_bouteilles
                             nombre = 0;
                             Console.WriteLine("Combien en retire ?");
                             saisie = Console.ReadLine();
-                            ok = int.TryParse(saisie, out nombre);
+                            ok = Parseur(saisie, ref nombre);
                             pack.Retirer(nombre);
+                            numberBout += nombre;
                         }
                         while (!ok);
                     }
                     #endregion
-                    #region Ouvrir
-                    if (saisie == "ouvrir")
+
+                    #region Interaction avec une bouteille
+                    if (saisie == "interagir")
                     {
-                        eau.Ouvrir();
-                    }
-                    #endregion
-                    #region Fermer
-                    if (saisie == "fermer")
-                    {
-                        eau.Fermer();
-                    }
-                    #endregion
-                    #region Vider
-                    if (saisie == "vider")
-                    {
-                        do
+                        if (numberBout == 0)
                         {
-                            ok = true;
-                            Console.WriteLine("De combien de % on vide ?");
-                            saisie = Console.ReadLine();
-                            ok = int.TryParse(saisie, out nombre);
-                            if (nombre <= 0 || nombre >100)
-                            {
-                                Console.WriteLine("La valeur saisie dépasse la capacitée de la bouteille");
-                                ok = false;
-                            }
+                            Console.WriteLine("Vous n'avez pas de bouteille avec lesqueles interagir");
                         }
-                        while(!ok) ;
-                        eau.Vider(nombre);
-                    }
-                    #endregion
-                    #region Remplir
-                    if (saisie == "remplir")
-                    {
-                        do
+                        else
                         {
-                            Console.WriteLine("De combien de % on remplit ?");
-                            saisie = Console.ReadLine();
-                            ok = int.TryParse(saisie, out nombre);
-                            if (nombre <= 0 || nombre >100)
+                            Console.WriteLine(eau);
+                            finBouteille = false;
+                            do
                             {
-                                Console.WriteLine("La valeur saisie dépasse la capacitée de la bouteille");
-                                ok = false;
+                                Console.WriteLine(eau);
+                                Console.WriteLine("Que voules-vous faire ?\nouvrir ? fermer ? remplir ? vider ? jeter ?");
+                                saisie = Console.ReadLine();
+                                if (saisie == "ouvrir" || saisie == "fermer" || saisie == "remplir" || saisie == "vider" || saisie == "jeter")
+                                {
+                                    #region Ouvrir
+                                    if (saisie == "ouvrir")
+                                    {
+                                        eau.Ouvrir();
+                                    }
+                                    #endregion
+
+                                    #region Fermer
+                                    if (saisie == "fermer")
+                                    {
+                                        eau.Fermer();
+                                    }
+                                    #endregion
+
+                                    #region Remplir
+                                    if (saisie == "remplir")
+                                    {
+                                        do
+                                        {
+                                            ok = true;
+                                            nombre = 0;
+                                            Console.WriteLine("De combien de % on remplie");
+                                            saisie = Console.ReadLine();
+                                            ok = Parseur(saisie, ref nombre);
+                                            if (nombre <1 || nombre >100)
+                                            {
+                                                Console.WriteLine(depasse);
+                                                ok = false;
+                                            }
+                                            else
+                                            {
+                                                eau.Remplir(nombre);
+                                            }
+                                        }
+                                        while (!ok);
+                                    }
+                                    #endregion
+
+                                    #region Vider
+                                    if (saisie == "vider")
+                                    {
+                                        do
+                                        {
+                                            ok = true;
+                                            nombre = 0;
+                                            Console.WriteLine("De combien de % on vide");
+                                            saisie = Console.ReadLine();
+                                            ok = Parseur(saisie, ref nombre);
+                                            if (nombre < 1 || nombre > 100)
+                                            {
+                                                Console.WriteLine(depasse);
+                                                ok = false;
+                                            }
+                                            else
+                                            {
+                                                eau.Vider(nombre);
+                                            }
+                                        }
+                                        while (!ok);
+                                    }
+                                    #endregion
+
+                                    #region Jeter
+                                    if (saisie == "jeter")
+                                    {
+                                        finBouteille = true;
+                                        numberBout--;
+                                    }
+                                    #endregion
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Vous avez écrit n'importe quoi");
+                                }
                             }
+                            while (finBouteille == false);
+                            
                         }
-                        while (!ok);
-                        eau.Remplir(nombre);
                     }
                     #endregion
-                    #region Sortie
+
+                    #region sortir
                     if (saisie == "sortir")
                     {
                         sortir = true;
                     }
                     #endregion
                 }
+                
                 else
                 {
                     Console.WriteLine("Vous avez écrit n'importe quoi !");
                 }
                 #endregion
                 Console.WriteLine(pack);
-                Console.WriteLine(eau);
             }
             while (sortir == false);
             Console.WriteLine("Au revoir");
@@ -166,3 +220,89 @@ namespace Pack_de_bouteilles
         }
     }
 }
+//if (saisie == "ajouter" || saisie == "retirer" || saisie == "ouvrir" || saisie == "fermer" || saisie == "vider" || saisie == "remplir" || saisie == "sortir")
+//{
+//    #region Ajouter
+//    if (saisie == "ajouter")
+//    {
+//        do
+//        {
+//            nombre = 0;
+//            Console.WriteLine("Combien on ajoute ?");
+//            saisie = Console.ReadLine();
+//            ok = int.TryParse(saisie, out nombre);
+//            pack.Ajouter(nombre);
+//        }
+//        while (!ok);
+//    }
+//    #endregion
+//    #region Retirer
+//    if (saisie == "retirer")
+//    {
+//        do
+//        {
+//            nombre = 0;
+//            Console.WriteLine("Combien en retire ?");
+//            saisie = Console.ReadLine();
+//            ok = int.TryParse(saisie, out nombre);
+//            pack.Retirer(nombre);
+//        }
+//        while (!ok);
+//    }
+//    #endregion
+//    #region Ouvrir
+//    if (saisie == "ouvrir")
+//    {
+//        eau.Ouvrir();
+//    }
+//    #endregion
+//    #region Fermer
+//    if (saisie == "fermer")
+//    {
+//        eau.Fermer();
+//    }
+//    #endregion
+//    #region Vider
+//    if (saisie == "vider")
+//    {
+//        do
+//        {
+//            ok = true;
+//            Console.WriteLine("De combien de % on vide ?");
+//            saisie = Console.ReadLine();
+//            ok = int.TryParse(saisie, out nombre);
+//            if (nombre <= 0 || nombre >100)
+//            {
+//                Console.WriteLine("La valeur saisie dépasse la capacitée de la bouteille");
+//                ok = false;
+//            }
+//        }
+//        while(!ok) ;
+//        eau.Vider(nombre);
+//    }
+//    #endregion
+//    #region Remplir
+//    if (saisie == "remplir")
+//    {
+//        do
+//        {
+//            Console.WriteLine("De combien de % on remplit ?");
+//            saisie = Console.ReadLine();
+//            ok = int.TryParse(saisie, out nombre);
+//            if (nombre <= 0 || nombre >100)
+//            {
+//                Console.WriteLine("La valeur saisie dépasse la capacitée de la bouteille");
+//                ok = false;
+//            }
+//        }
+//        while (!ok);
+//        eau.Remplir(nombre);
+//    }
+//    #endregion
+//    #region Sortie
+//    if (saisie == "sortir")
+//    {
+//        sortir = true;
+//    }
+//    #endregion
+//}
