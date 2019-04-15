@@ -12,6 +12,10 @@ namespace Additionneur
 {
     public partial class Form1 : Form
     {
+        ulong total = 0, numero = 0;
+        bool ok;
+        string chiffres = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -21,8 +25,50 @@ namespace Additionneur
         {
             Button bouton = sender as Button;
             string numero = bouton.Text;
-            Affichage.Text = numero;
+            chiffres += numero;
+            Affichage.Text = chiffres;
+            Compteur.Text = total.ToString();
             //MessageBox.Show(numero);
+        }
+
+        private void Addition(object sender, EventArgs e)
+        {
+            if (chiffres == "")
+            {
+                MessageBox.Show("Je n'ai rien a calculer");
+            }
+            else
+            {
+                ulong calcul = ulong.Parse(chiffres);
+                total += calcul;
+                Affichage.Text = "";
+                chiffres = "";
+                numero = 0;
+                Compteur.Text = total.ToString();
+            }
+        }
+
+        private void Egal(object sender, EventArgs e)
+        {
+            if (chiffres == "")
+            {
+                MessageBox.Show("Je n'ai rien a calculer");
+            }
+            else
+            {
+                ulong calcul = ulong.Parse(chiffres);
+                total += calcul;
+                Compteur.Text = total.ToString();
+            }
+        }
+
+        private void Effacer(object sender, EventArgs e)
+        {
+            total = 0;
+            numero = 0;
+            chiffres = "";
+            Affichage.Text = "";
+            Compteur.Text = total.ToString();
         }
     }
 }
