@@ -386,6 +386,7 @@
             this.Controls.Add(this.touche3);
             this.Controls.Add(this.touche2);
             this.Controls.Add(this.touche1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Calcul Matrix";
             this.ResumeLayout(false);
