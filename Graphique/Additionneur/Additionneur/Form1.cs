@@ -68,7 +68,6 @@ namespace Additionneur
         {
             Button symbole = sender as Button;
             operateur = symbole.Text;
-            TextOperateur.Text = operateur;
             if (affichageChiffres == "")
             {
                 affichageChiffres = "0";
@@ -103,7 +102,6 @@ namespace Additionneur
             affichageChiffres = "";
             Affichage.Text = "";
             operateur = "";
-            TextOperateur.Text = "";
             Compteur.Text = total.ToString();
         }
     }
