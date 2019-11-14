@@ -23,6 +23,10 @@ namespace Jeu_du_421
         {
             return this.number;
         }
+        public void SetNumber (int _number)
+        {
+            this.number = _number;
+        }
         public void Lancer ()
         {
             Random rand = new Random ();

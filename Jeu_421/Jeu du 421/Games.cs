@@ -19,10 +19,14 @@ namespace Jeu_du_421
                 Console.Clear();
                 Console.WriteLine ("Il vous reste: " + lancer.GetScore() + " " + Tentative(lancer.GetScore()));
                 Console.WriteLine ("État des dés:\n" + lancer.AfficherD ());
-                Console.WriteLine ("Voici les options :\nPour vérouiller le dé utiliser les touches numériques : [1],[2],[3]\nUne fois le verouillage choisis appuyer sur [L] pour lancer les dés");
+                Console.WriteLine ("Voici les options :\n" +
+                    "[I] Pour intervertir 2 dés\n" +
+                    "Touche numérique [1],[2],[3] pour vérouiller le dé de votre choix\n" +
+                    "[L] pour lancer les dés");
                 touche = Console.ReadKey ().Key;
                 switch (touche)
                 {
+                    #region Dés
                     case ConsoleKey.D1:
                         lancer.LockInverser1 ();
                         break;
@@ -32,9 +36,54 @@ namespace Jeu_du_421
                     case ConsoleKey.D3:
                         lancer.LockInverser3 ();
                         break;
+                    #endregion
+                    #region Intervertir
+                    case ConsoleKey.I:
+                        bool ok1, ok2;
+                        int inv1, inv2;
+                        do
+                        {
+                            do
+                            {
+                                ok1 = false;
+                                inv1 = Program.Verif ("Quel est le premier dé a intervertir ?");
+                                if (inv1 >= 1 && inv1 <= 3)
+                                {
+                                    ok1 = true;
+                                }
+                                else
+                                {
+                                    Console.WriteLine ("Le jeux ne compte que 3 dés");
+                                }
+                            } while (!ok1);
+                            do
+                            {
+                                ok1 = false;
+                                inv2 = Program.Verif ("On le change avec quel dé ?");
+                                if (inv2 >= 1 && inv2 <= 3)
+                                {
+                                    ok1 = true;
+                                }
+                            } while (!ok1);
+                            if (inv1 == inv2)
+                            {
+                                ok2 = false;
+                                Console.WriteLine ("Vous me demander de déplacer le même dé");
+                                ok2 = false;
+                            }
+                            else
+                            {
+                                lancer.Intervertir (inv1, inv2);
+                                ok2 = true;
+                            }
+                        } while (!ok2);
+                        break;
+                    #endregion
+                    #region Lancer
                     case ConsoleKey.L:
                         lancer.Lancer ();
                         break;
+                    #endregion
                     default:
                         Console.WriteLine ("cette touche n'existe pas");
                         break;

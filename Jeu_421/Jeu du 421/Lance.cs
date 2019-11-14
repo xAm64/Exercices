@@ -62,6 +62,57 @@ namespace Jeu_du_421
             score -= 1;
         }
         #endregion
+        #region Intervertir
+        public void Intervertir (int _x, int _y)
+        {
+            int deZ;
+            if (_x == 1)
+            {
+                deZ = de1.GetNumber ();
+            }
+            else if (_x == 2)
+            {
+                deZ = de2.GetNumber ();
+            }
+            else
+            {
+                deZ = de3.GetNumber ();
+            }
+            // 1x
+            if (_x == 1 && _y == 2)
+            {
+                de1.SetNumber (de2.GetNumber ());
+                de2.SetNumber (deZ);
+            }
+            if (_x == 1 && _y == 3)
+            {
+                de1.SetNumber (de3.GetNumber ());
+                de3.SetNumber (deZ);
+            }
+            // 2x
+            if (_x == 2 && _y == 1)
+            {
+                de2.SetNumber (de1.GetNumber ());
+                de1.SetNumber (deZ);
+            }
+            if (_x == 2 && _y == 3)
+            {
+                de2.SetNumber (de3.GetNumber ());
+                de3.SetNumber (deZ);
+            }
+            // 3x
+            if (_x == 3 && _y == 1)
+            {
+                de3.SetNumber (de1.GetNumber ());
+                de1.SetNumber (deZ);
+            }
+            if (_x == 3 && _y == 2)
+            {
+                de3.SetNumber (de2.GetNumber ());
+                de2.SetNumber (deZ);
+            }
+        }
+        #endregion
 
         #region Afficher dés
         public string AfficherD ()
